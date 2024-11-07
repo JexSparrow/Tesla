@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>TESLA - Jex</title>
+</head>
+
+<body>
+
+    <img class="logo" src="./assets/logo.png">
+
+    <ul>
+        <li class="item">
+            <video class="video-imagens" src="./assets/model-y.mp4" autoplay loop muted></video>
+            <div class="info-carros">
+                <h1 class="autoShow">MODEL-Y</h1>
+                <p class="autoShow">Conheça um novo mundo de possibilidades</p>
+            </div>
+
+            <div class="infos-abaixo">
+                <button class="botaoCompra" value="compra" onclick="exec1()">Compre Agora</button>
+                <button class="botaoTest" value="test-Drive" onclick="exec2()">Faça um Test-Drive</button>
+                <p class="p-rodape">Não garantimos seu veículo imediatamente. Consultar Estoque</p>
+            </div>
+        </li>
+
+        <li class="item">
+            <img class=" video-imagens" src="./assets/model-s.png">
+            <div class="info-carros">
+                <h1 class="autoShow">MODEL-S</h1>
+                <p class="autoShow">Segurança e Velocidade, 0 a 100 km/h em 1.5s</p>
+            </div>
+        </li>
+
+        <li class="item">
+            <img class=" video-imagens" src="./assets/model-x.png">
+            <div class="info-carros">
+                <h1 class="autoShow">MODEL-X</h1>
+                <p class="autoShow">A SUV elétrica mais desejada do mundo!</p>
+            </div>
+        </li>
+    </ul>
+
+    <div class="caixa-formulario">
+        <form class="formulario">
+
+            <input class="input-nome" placeholder="Digite seu nome">
+            <input class="input-tel" placeholder="Digite seu telefone" type="tel">
+            <textarea placeholder="Alguma dúvida?"></textarea>
+            <button>Enviar</button>
+
+        </form>
+
+
+
+    </div>
+
+    <div class="caixa-formulario">
+        <form class="formulario-test-drive">
+
+            <input class="input-nome" placeholder="Digite seu nome">
+            <input class="input-tel" placeholder="Digite seu telefone" type="tel">
+            <button>Enviar</button>
+
+        </form>
+
+
+
+    </div>
+
+
+</body>
+
+<script>
+
+    const buttonCompra = document.querySelector(".botaoCompra")
+    const buttonTest = document.querySelector(".botaoTest")
+
+    const form = document.querySelector(".formulario")
+    const formTest = document.querySelector(".formulario-test-drive")
+
+    const video = document.querySelector(".video-imagens")
+
+
+
+    function mostrarFormCompra() {
+
+        buttonCompra.value = "fechar"
+
+        {
+
+            form.style.left = "50%"
+            form.style.transform = "translateX(-50%)"
+
+            form.style.transition = "0.85s ease-in-out"
+            form.style.zIndex = "1"
+
+            video.style.filter = "brightness(30%)"
+            video.style.transition = "1.3s ease-in-out"
+
+            buttonCompra.innerHTML = "Fechar"
+
+            buttonCompra.style.backgroundColor = "#ac000090"
+
+        }
+
+    }
+
+    function esconderFormCompra() {
+
+        if (buttonCompra.value == "fechar") {
+
+            form.style.left = "29%"
+
+            form.style.transform = "translateY(-100vh)"
+
+
+            form.style.transition = "0.85s ease-in-out"
+
+            form.style.zIndex = "-1"
+
+
+            video.style.filter = "brightness(70%)"
+            video.style.transition = "1.3s ease-in-out"
+
+            buttonCompra.innerHTML = "Compre Agora!"
+            buttonCompra.style.backgroundColor = "rgba(33, 33, 33, 0.616)"
+
+        }
+
+        buttonCompra.value = "compra"
+
+    }
+
+    function mostrarTestDrive() {
+
+        buttonTest.value = "fechar"
+
+        {
+
+            formTest.style.right = "50%"
+            formTest.style.transform = "translateX(50%)"
+
+            formTest.style.transition = "0.85s ease-in-out"
+            formTest.style.zIndex = "1"
+
+            video.style.filter = "brightness(30%)"
+            video.style.transition = "1.3s ease-in-out"
+
+            buttonTest.innerHTML = "Fechar!"
+
+            buttonTest.style.backgroundColor = "#ac000090"
+
+        }
+
+
+    }
+
+    function esconderFormTest() {
+
+        if (buttonTest.value == "fechar") {
+
+            formTest.style.right = "31%"
+
+
+
+
+            formTest.style.transform = "translateY(-100vh)"
+
+
+
+
+            formTest.style.transition = "0.85s ease-in-out"
+
+            formTest.style.zIndex = "-1"
+
+
+            video.style.filter = "brightness(70%)"
+            video.style.transition = "1.3s ease-in-out"
+
+            buttonTest.innerHTML = "Faça um Test-Drive"
+            buttonTest.style.backgroundColor = "rgba(33, 33, 33, 0.616)"
+
+        }
+
+
+        buttonTest.value = "test-Drive"
+
+    }
+
+    function exec1() {
+
+        if (buttonCompra.value == "compra") {
+            mostrarFormCompra()
+            esconderFormTest()
+        } else {
+            esconderFormCompra()
+
+        }
+    }
+
+    function exec2() {
+
+        if (buttonTest.value == "test-Drive") {
+            mostrarTestDrive()
+            esconderFormCompra()
+        } else {
+            esconderFormTest()
+
+        }
+    }
+
+</script>
+
+</html>
