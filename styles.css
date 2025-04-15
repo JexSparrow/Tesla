@@ -211,9 +211,9 @@ button:hover {
 .formulario-test-drive {
 
     position: absolute;
-    top: 50vh;
-
-    right: -100vw;
+    top: -20vh;
+    left: 10%;
+    transform: translateX(50%);
 
     display: flex;
     flex-direction: column;
@@ -230,6 +230,7 @@ button:hover {
 
     width: 40%;
     height: 20%;
+
 
 }
 
@@ -248,57 +249,4 @@ button:hover {
         opacity: 1;
         transform: translateY(0) scale(1);
     }
-}
-
-@media screen and (max-width: 710px) {
-    html {
-        scroll-snap-type: y mandatory;
-        overflow-x: hidden;
-
-    }
-
-    body {
-        overflow-x: hidden;
-        /* Adicione isso também no body para garantir */
-    }
-
-    .logo {
-        position: fixed;
-        top: 1%;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .info-carros h1 {
-
-        font-size: 36px;
-
-    }
-
-    .info-carros p {
-
-        font-size: 16px;
-    }
-
-    .infos-abaixo {
-        margin-bottom: 5%;
-    }
-
-    .formulario,
-    .formulario-test-drive {
-        width: 80%;
-        top: 35%;
-
-
-    }
-
-    .formulario button,
-    .formulario-test-drive button {
-
-        width: 100%;
-
-
-    }
-
-
 }
