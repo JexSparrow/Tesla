@@ -12,6 +12,7 @@
 
 html {
     scroll-snap-type: y mandatory;
+    overflow-x: hidden;
 }
 
 .logo {
@@ -247,4 +248,40 @@ button:hover {
         opacity: 1;
         transform: translateY(0) scale(1);
     }
+}
+
+@media screen and (max-width: 710px) {
+    .logo {
+        position: fixed;
+        top: 1%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .info-carros h1 {
+
+        font-size: 36px;
+
+    }
+
+    .info-carros p {
+
+        font-size: 16px;
+    }
+
+    .formulario,
+    .formulario-test-drive {
+        width: 80%;
+
+    }
+
+    .formulario button,
+    .formulario-test-drive button {
+
+        width: 100%;
+
+
+    }
+
+
 }
