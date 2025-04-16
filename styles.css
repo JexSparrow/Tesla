@@ -250,3 +250,29 @@ button:hover {
         transform: translateY(0) scale(1);
     }
 }
+
+@media screen and (max-width: 710px) {
+
+    .logo {
+        position: fixed;
+        top: 1%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .formulario-test-drive button {
+
+        width: 100%;
+    }
+
+    .formulario-test-drive,
+    .formulario {
+        width: auto;
+    }
+
+    .infos-abaixo {
+        margin-bottom: 20px;
+    }
+
+
+}
